@@ -45,7 +45,7 @@ train_datagen = ImageDataGenerator(rescale = 1./255,
 
 test_datagen = ImageDataGenerator(rescale = 1./255)
 
-training_set = train_datagen.flow_from_directory('asl-alphabet//train',
+training_set = train_datagen.flow_from_directory('asl-alphabet//train//asl_alphabet_train', #Might throw filenotfound error. Replace                                                                                              #with actual
                                                  target_size = (128, 128),
                                                  batch_size = 32,
                                                  class_mode = 'categorical')
