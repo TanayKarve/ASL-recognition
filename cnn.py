@@ -57,17 +57,17 @@ test_set = test_datagen.flow_from_directory('asl-alphabet//test//asl_alphabet_te
 
 call=ModelCheckpoint('asl.{epoch:02d}.hdf5',monitor='acc',verbose=1,save_best_only=True)
 cb=[call]
-classifier=load_model('asl.h5')
-#try:
-#    history=classifier.fit_generator(training_set,
-#	                         steps_per_epoch = 8000,
-#	                         epochs = 20,
-#	                         validation_data = test_set,
-#	                         callbacks=cb,
-#	                         validation_steps = 2000)
-#except Exception as e:
-#	print(e)
-#	classifier.save('asl.h5')
+#classifier=load_model('asl.h5')
+try:
+    history=classifier.fit_generator(training_set,
+	                         steps_per_epoch = 8000,
+	                         epochs = 20,
+	                         validation_data = test_set,
+	                         callbacks=cb,
+	                         validation_steps = 2000)
+except Exception as e:
+	print(e)
+	classifier.save('asl.h5')
 
 #classifier.save('asl.h5')
 #plt.plot(history.history['acc'],linewidth=3)
