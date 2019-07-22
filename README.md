@@ -1,3 +1,5 @@
+*Program to identify sign language using Deep Learning.*
+
 Instructions:
 1. Clone this repository.
 2. Download and extract dataset from the below mentioned link.
